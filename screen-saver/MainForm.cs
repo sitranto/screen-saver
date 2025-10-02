@@ -1,10 +1,25 @@
 namespace screen_saver
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        private readonly Bitmap SnowflakeImage = Properties.Resources.snowflake;
+
+        public MainForm()
         {
             InitializeComponent();
+            InitializeFormData();
         }
+
+        /// <summary>
+        /// Метод инициализации основных свойств формы.
+        /// </summary>
+        private void InitializeFormData()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            Size = Screen.PrimaryScreen!.Bounds.Size;
+            BackgroundImage = Properties.Resources.bg;
+            KeyDown += (_, _) => { Close(); };
+        }
+
     }
 }
