@@ -25,6 +25,7 @@ namespace screen_saver
             FormBorderStyle = FormBorderStyle.None;
             Size = Screen.PrimaryScreen!.Bounds.Size;
             BackgroundImage = Properties.Resources.bg;
+            DoubleBuffered = true; 
 
             timer.Interval = TimerInterval;
             timer.Tick += OnTick;
